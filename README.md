@@ -1,72 +1,73 @@
 # Vínculo — Social Impact & Nonprofit Management
 
-**Public portfolio · Full-stack web prototype · Social impact technology**
+**Public portfolio · Full-stack web prototype · Technology for social impact**
 
-[**Ver demostración de Vínculo**](https://vinculo-donantes-1.onrender.com/) · [Estudio de caso](docs/CASE_STUDY.md) · [Arquitectura](docs/ARCHITECTURE.md) · [Guía de entrevista](docs/INTERVIEW.md)
+[**Explore the live demo**](https://vinculo-donantes-1.onrender.com/) · [Case study](docs/CASE_STUDY.md) · [Architecture](docs/ARCHITECTURE.md) · [Interview guide](docs/INTERVIEW.md)
 
-> **Código fuente privado.** Este repositorio es únicamente el portafolio público del proyecto. No incluye frontend, backend, migraciones, credenciales ni datos privados de la aplicación.
+> **Private source code.** This repository only contains a public presentation of the project, not the application's frontend, backend, migrations, credentials, or donor information.
 
-## ¿Qué es Vínculo?
+## Overview
 
-Vínculo es un **prototipo en desarrollo** para explorar cómo conectar organizaciones sociales y donantes, y dar seguimiento administrativo a aportaciones. Busca integrar un directorio de organizaciones, cuentas, membresías, registro de donantes y donativos, y una experiencia de demostración para explorar funcionalidades.
+Vínculo is an **early-stage full-stack prototype** exploring how nonprofit organizations could connect with supporters while organizing administrative workflows related to donors and donations.
 
-**Estado actual:** demostración y pruebas con datos ficticios. **No procesa pagos, no cobra tarjetas y no está preparado para operar con datos reales de donantes.** No debe confundirse un registro manual de donativo con un pago procesado.
+The project combines a public directory, user accounts, organization memberships and permission-controlled record management.
 
-## Funcionalidades documentadas
+**Current status:** experimental demonstration using fictional information. **It does not collect payments, process credit cards, or support production use with real donor information.** Manually recording a donation is not equivalent to processing a financial transaction.
 
-| Módulo | Estado documentado |
+## Documented features
+
+| Module | Current scope |
 |---|---|
-| Directorio público | Demostración de tres fundaciones ficticias, filtros y detalles de proyectos |
-| Cuentas | Registro, inicio de sesión, consulta y cierre de sesión mediante API |
-| Membresías | Consulta de organizaciones asociadas a una cuenta |
-| Donantes y donativos | Registro, consulta y edición sujetos a permisos en la API; movimientos manuales, sin cobros |
-| Panel de ejemplo | Datos ficticios; parte de la interacción se guarda solo en el navegador |
-| Seguimientos de ejemplo | Demostración local, no un seguimiento multiusuario compartido |
-| Pagos, verificación de correo y reportes verificados | Pendientes de desarrollo y validación |
+| Public directory | Three fictional nonprofit profiles, filters and project descriptions |
+| User accounts | API-based registration, sign-in, account retrieval and sign-out |
+| Organization memberships | Retrieve the organizations associated with an account |
+| Donor and donation records | Manual create, read and update operations, subject to permissions |
+| Sample dashboard | Fictional data; some interactions are stored only in the browser |
+| Sample follow-ups | Local demonstration, not a shared multi-user workflow |
+| Payments, email verification and verified reports | Not implemented or not yet validated |
 
-Una cuenta nueva no recibe automáticamente acceso administrativo a ninguna fundación.
+New accounts do not automatically receive organization administration rights.
 
-## Tecnologías del prototipo
+## Technology stack
 
 - **Frontend:** React, TypeScript, Vite
-- **API:** Python, FastAPI, Pydantic
-- **Persistencia:** PostgreSQL, migraciones SQL
-- **Autenticación:** sesiones, control de membresías, hash de contraseñas
-- **Despliegue:** Render (sitio estático, API y base de datos)
-- **Ingeniería:** control de versiones, validaciones y documentación técnica
+- **Backend:** Python, FastAPI, Pydantic
+- **Data storage:** PostgreSQL, versioned SQL migrations
+- **Access:** sessions, memberships, permission controls and password hashing
+- **Hosting:** Render, with separate frontend, API and database resources
 
-## Flujo conceptual
+## Conceptual data flow
 
 ```text
-Organizaciones y campañas → Directorio público
-Cuenta de usuario → Autenticación → Membresías y permisos
-Gestión administrativa → API → PostgreSQL
-Vista de ejemplo → Datos ficticios en la interfaz
+Organizations and projects → Public directory
+User account → Authentication → Memberships and permissions
+Authorized management → API → PostgreSQL
+Sample dashboard → Fictional browser-local data
 ```
 
-## Demostración pública
+## Live demonstration
 
-**[Abrir Vínculo en Render](https://vinculo-donantes-1.onrender.com/)**
+**[Open Vínculo on Render](https://vinculo-donantes-1.onrender.com/)**
 
-Para explorar, utiliza **Ver panel de ejemplo** y solo datos ficticios. El servicio gratuito podría tardar en responder tras estar inactivo. Su disponibilidad no está garantizada por este portafolio.
+Select **“Ver panel de ejemplo” (View sample dashboard)** to explore the demo. Use only fictional information. The hosted service may require time to start after inactivity; availability has not been independently verified.
 
-## Qué demuestra este proyecto
+## What this project demonstrates
 
-- Diseño de una solución tecnológica aplicada a retos de organizaciones sociales.
-- Integración de interfaz web, API y base de datos relacional.
-- Modelado de cuentas, roles y membresías para gestionar acceso.
-- Distinción entre información de demostración y registros persistentes.
-- Criterio para definir limitaciones, validaciones y próximas etapas.
+- Translating a social-sector problem into a full-stack product concept
+- Connecting a web interface, API and relational database
+- Structuring account, membership and access-control workflows
+- Separating persisted operational records from demonstration-only data
+- Documenting implementation gaps, data-quality concerns and technical trade-offs
 
-## Alcance y precauciones
+## Scope and responsible use
 
-Vínculo es un **MVP/prototipo**, no una plataforma certificada ni un sistema de procesamiento financiero en operación. Se deben probar los permisos y flujos de extremo a extremo antes de utilizarlo con organizaciones reales. No compartas datos reales de donantes ni credenciales de uso habitual.
+Vínculo is a **prototype**, not a production-ready payment or donor management platform. End-to-end permissions, privacy safeguards and workflows require validation before any real-world deployment. Do not enter actual donor information or personal credentials into the demo.
 
-## Documentación
+## Project documentation
 
-- [Estudio de caso y estado de módulos](docs/CASE_STUDY.md)
-- [Arquitectura conceptual y privacidad](docs/ARCHITECTURE.md)
-- [Cómo explicar Vínculo en una entrevista](docs/INTERVIEW.md)
-- [Página visual](index.html)
+- [Technical case study](docs/CASE_STUDY.md)
+- [Architecture and privacy boundaries](docs/ARCHITECTURE.md)
+- [Interview talking points](docs/INTERVIEW.md)
+- [Portfolio landing page](index.html)
 
-**Proyecto de portafolio de Fernanda Treviño.** El código de la aplicación está en un repositorio privado distinto.
+**Portfolio project by Fernanda Treviño.** The application's source repository remains private.
