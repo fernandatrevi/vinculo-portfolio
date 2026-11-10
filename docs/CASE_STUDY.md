@@ -1,62 +1,62 @@
-# Vínculo | Estudio de caso
+# Vínculo | Technical Case Study
 
-## 1. Problema abordado
+## 1. Problem and motivation
 
-Organizaciones sociales pueden enfrentar retos al organizar la información de campañas, donantes y seguimiento. Vínculo explora una plataforma que conecte la experiencia de consulta de proyectos con un espacio administrativo. Esta es la **motivación del diseño**, no un hallazgo medido en organizaciones participantes.
+Nonprofit organizations may need to manage campaigns, donor records, and follow-up activities across different processes. Vínculo explores connecting public project discovery with administrative tools. This is a **design motivation**, not a measured finding from participating nonprofits.
 
-## 2. Propuesta de valor
+## 2. Value proposition
 
-Ofrecer en una misma experiencia un directorio de fundaciones y funciones administrativas, con membresías y permisos. El objetivo a futuro es vincular aportaciones registradas con procesos de agradecimiento y seguimiento, sujeto a desarrollo y validación.
+Provide a public nonprofit directory alongside permission-controlled management tools. A longer-term goal is to connect recorded donations to acknowledgment and follow-up workflows, subject to further development and validation.
 
-## 3. Estado funcional actual
+## 3. Current functionality
 
-| Componente | Estado de la implementación |
+| Component | Documented implementation |
 |---|---|
-| Directorio público | Tres fundaciones ficticias con filtros y fichas de proyectos |
-| Registro y acceso | Cuentas, inicio/cierre de sesión y consulta de cuenta mediante API |
-| Organizaciones asociadas | Consulta mediante membresías; las cuentas nuevas no tienen acceso automático |
-| Datos administrativos | Donantes y donativos manuales: consulta, registro y edición según permisos en PostgreSQL |
-| Panel de ejemplo | Datos de demostración y algunas operaciones en localStorage |
-| Seguimientos de ejemplo | Simulación local, no sistema colaborativo persistente |
-| Pagos en línea | No implementados |
-| Verificación de email | Pendiente |
-| Suscripciones/notificaciones/reportes verificados | Pendientes |
+| Public directory | Three fictional nonprofit profiles with filters and project descriptions |
+| Registration and access | API-based account registration, login, logout and account retrieval |
+| Memberships | Retrieve affiliated organizations; no automatic organization access |
+| Administrative records | Permission-controlled manual donor and donation record operations in PostgreSQL |
+| Sample dashboard | Fictional data and some actions stored in browser localStorage |
+| Sample follow-ups | Local simulation, not persistent multi-user collaboration |
+| Online payments | Not implemented |
+| Email verification | Not implemented |
+| Recurring payments, notifications, verified reports | Pending |
 
-Los resultados locales de prueba no equivalen a validación integral de la aplicación desplegada.
+Local test results do not establish comprehensive production deployment validation.
 
-## 4. Herramientas y capacidades
+## 4. Tools and engineering capabilities
 
-- React + TypeScript + Vite para experiencia web.
-- FastAPI + Pydantic para lógica de la API.
-- PostgreSQL + SQL para persistencia y migraciones.
-- Autenticación y permisos asociados a membresías.
-- Render para publicación de interfaz y API en servicios separados.
+- React, TypeScript and Vite for the web application
+- FastAPI and Pydantic for backend endpoints
+- PostgreSQL and SQL migrations for structured persistence
+- Authentication and membership-based access control
+- Render for separately hosted web interface and API
 
-## 5. Flujo de usuario ejemplificado
+## 5. Example user journey
 
-1. Una persona explora el directorio público.
-2. Si desea crear cuenta, completa el registro con datos ficticios durante la demostración.
-3. Inicia sesión y consulta su cuenta.
-4. Si no tiene una membresía asignada, no puede administrar una fundación.
-5. Las funciones administrativas están condicionadas por permisos; el panel de ejemplo no representa una operación compartida real.
+1. A visitor browses the public directory.
+2. A visitor registers using fictional data for demonstration.
+3. The user signs in and views their account.
+4. Without an assigned membership, the user cannot administer an organization.
+5. Some administrative operations require specific permissions, while the sample dashboard is not a shared production system.
 
-## 6. Indicadores potenciales (no implementados como resultados comprobados)
+## 6. Potential business indicators — not measured project outcomes
 
-En una siguiente etapa podrían medirse aportaciones confirmadas, tasa de recurrencia, tiempo de agradecimiento, retención de donantes y cumplimiento de seguimientos. Para eso serían necesarios datos confiables, definiciones compartidas y reglas de conciliación.
+A future product might track confirmed donation amounts, recurring donor rates, acknowledgment time, donor retention and follow-up completion. Doing so would require reliable input records, unambiguous metric definitions and financial reconciliation.
 
-## 7. Limitaciones y próximos pasos
+## 7. Limitations and next steps
 
-- No utilizar datos reales de donantes hasta completar controles de seguridad y validación.
-- Agregar verificación de correo y pruebas automatizadas de flujos críticos.
-- Corregir los pendientes de lint y verificar controles de acceso en despliegue.
-- Diseñar conciliación contable antes de hablar de donaciones cobradas.
-- Definir condiciones de seguridad, privacidad y tratamiento de datos.
-- Evaluar métricas con organizaciones piloto solamente después de validación.
+- Avoid processing real donor information until appropriate security and privacy safeguards are validated.
+- Add email verification and automated tests for critical workflows.
+- Resolve existing linting issues and verify permissions in the deployed environment.
+- Develop accounting reconciliation before claiming payment collection.
+- Define data handling and operational procedures.
+- Validate proposed impact metrics through appropriately scoped pilots.
 
-## 8. Aprendizajes técnicos
+## 8. Technical learning outcomes
 
-El proyecto permite explicar decisiones de diseño de datos, integración frontend/backend, persistencia, permisos y diferencias entre simulación y operación real.
+Vínculo supports discussions of data modeling, frontend/backend integration, relational persistence, role-based access and the difference between prototype functionality and production systems.
 
-**Demostración:** https://vinculo-donantes-1.onrender.com/ — puede tardar al iniciar en un plan gratuito.
+**[Open the demonstration](https://vinculo-donantes-1.onrender.com/)** — the free hosting service may need to start after inactivity.
 
-*Este documento no incluye ni revela código fuente del repositorio privado.*
+*No private application source code is included in this case study.*
