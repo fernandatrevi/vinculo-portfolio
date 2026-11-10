@@ -1,51 +1,51 @@
-# Arquitectura conceptual de Vínculo
+# Vínculo | Conceptual Architecture
 
-La siguiente vista representa la arquitectura descrita por el proyecto privado; no documenta una auditoría de seguridad ni garantiza que todos los flujos estén validados en producción.
+This diagram summarizes the architecture documented by the private project. It is **not** a security audit or a guarantee that every flow has been validated in production.
 
 ```mermaid
 flowchart TD
-    A[Visitante / usuario] --> B[Frontend React + TypeScript]
-    B --> C[API FastAPI]
+    A[Visitor / user] --> B[React and TypeScript frontend]
+    B --> C[FastAPI backend]
     C --> D[(PostgreSQL)]
-    C --> E[Autenticación / membresías / permisos]
-    B --> F[Panel de ejemplo: datos ficticios y almacenamiento local]
-    B --> G[Directorio público]
+    C --> E[Authentication / memberships / permissions]
+    B --> F[Sample dashboard: fictional data and browser-local storage]
+    B --> G[Public directory]
 ```
 
-## Responsabilidades
+## Components and responsibilities
 
-| Componente | Responsabilidad |
+| Component | Responsibility |
 |---|---|
-| React + TypeScript | Presentación e interacción en navegador |
-| FastAPI | Endpoints de cuenta, membresías y registros administrativos |
-| PostgreSQL | Persistencia de cuentas, membresías y datos registrados mediante API |
-| localStorage del navegador | Algunas operaciones de demostración que no se sincronizan |
-| Render | Hosting separado de sitio web y API, con base PostgreSQL |
+| React and TypeScript | Browser interface and interactions |
+| FastAPI | Account, membership and administrative APIs |
+| PostgreSQL | Persistent account, membership and API-managed records |
+| Browser localStorage | Selected demonstration interactions that are not shared across users |
+| Render | Hosting for separate website and API services, with a PostgreSQL resource |
 
-## Límites importantes
+## Important boundaries
 
-- Las donaciones registradas en la aplicación son **registros manuales**, no transacciones con procesador de pagos.
-- El panel de ejemplo no es una interfaz de administración compartida con persistencia garantizada.
-- El acceso está asociado a membresías y permisos; registrar una cuenta no concede derechos automáticamente.
-- El correo de verificación no está implementado.
-- La aplicación requiere datos ficticios de prueba.
-- Los secretos y cadenas de conexión permanecen fuera del portafolio público.
+- A donation entry is a **manual record**, not a payment-processing transaction.
+- The sample dashboard is not a fully shared administration system.
+- Account registration does not automatically grant organization permissions.
+- Email verification has not been implemented.
+- The prototype should only be tested using fictional information.
+- Secrets and database credentials are not included in this public repository.
 
-## Flujo de información
+## Information flow
 
 ```text
-Visitante -> Directorio / filtros
-Usuario -> Registro e inicio de sesión -> API -> PostgreSQL
-Usuario con membresía -> Operaciones autorizadas -> API -> PostgreSQL
-Exploración de demostración -> Panel de ejemplo -> Navegador local
+Visitor → Directory and filters
+User → Registration / authentication → API → PostgreSQL
+Authorized member → Administrative operations → API → PostgreSQL
+Demo visitor → Sample dashboard → Local browser data
 ```
 
-## Despliegue documentado
+## Documented deployment
 
-- Web: https://vinculo-donantes-1.onrender.com/
-- API: servicio independiente en Render
-- Base: PostgreSQL conectada con la API
+- [Public web demo](https://vinculo-donantes-1.onrender.com/)
+- API hosted separately on Render
+- PostgreSQL connected to the API
 
-**Aviso operacional:** la documentación del proyecto original indica que una instancia gratuita de base de datos tiene vencimiento el 18 de noviembre de 2026. El funcionamiento posterior requerirá revisar el plan o migrar los datos. Este portafolio no garantiza disponibilidad continua.
+**Operational note:** The source project's documentation states that a free PostgreSQL instance expires on **November 18, 2026**. Service continuity may require a plan change or migration. This portfolio does not guarantee uptime.
 
-**Privacidad del código:** un repositorio privado oculta el historial y los archivos almacenados ahí, pero los archivos frontend enviados al navegador de un visitante pueden ser inspeccionados. Si hay lógica verdaderamente confidencial, debe permanecer en el servidor.
+**Source privacy:** Keeping a repository private protects its Git history and stored files from public repository access. Frontend resources delivered to a web browser, however, remain inspectable. Confidential business logic must be kept on the server.
