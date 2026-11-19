@@ -18,7 +18,7 @@ The project combines a public directory, user accounts, organization memberships
 
 | Module | Current scope |
 |---|---|
-| Public directory | Three fictional nonprofit profiles, filters and project descriptions |
+| Public directory | Six real organizations shown as informational references without affiliation; proposed campaigns and amounts are fictional; filters and project descriptions |
 | User accounts | API-based registration, sign-in, account retrieval and sign-out |
 | Organization memberships | Retrieve the organizations associated with an account |
 | Donor and donation records | Manual create, read and update operations, subject to permissions |
@@ -49,7 +49,7 @@ Sample dashboard → Fictional browser-local data
 
 **[Open Vínculo on Render](https://vinculo-donantes-1.onrender.com/)**
 
-Select **“Ver panel de ejemplo” (View sample dashboard)** to explore the demo. Use only fictional information. The hosted service may require time to start after inactivity; availability has not been independently verified.
+Select **“Panel para fundaciones”** and then **“Vista para inversionistas”** to explore the sample dashboard. Use only fictional information. The hosted service may require time to start after inactivity; availability has not been independently verified.
 
 ## What this project demonstrates
 
