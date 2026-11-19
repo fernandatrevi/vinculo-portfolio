@@ -46,6 +46,6 @@ Demo visitor → Sample dashboard → Local browser data
 - API hosted separately on Render
 - PostgreSQL connected to the API
 
-**Operational note:** The source project's documentation states that a free PostgreSQL instance expires on **November 18, 2026**. Service continuity may require a plan change or migration. This portfolio does not guarantee uptime.
+**Operational note (November 19, 2026):** An earlier source document listed **November 18, 2026** as the expiry date for a free PostgreSQL instance; that date has passed. The database's current status has **not** been verified by this portfolio. The availability of the API, database, and demonstration should be checked separately before relying on the service. This portfolio does not guarantee uptime.
 
 **Source privacy:** Keeping a repository private protects its Git history and stored files from public repository access. Frontend resources delivered to a web browser, however, remain inspectable. Confidential business logic must be kept on the server.
