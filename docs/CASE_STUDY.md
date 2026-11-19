@@ -12,7 +12,7 @@ Provide a public nonprofit directory alongside permission-controlled management 
 
 | Component | Documented implementation |
 |---|---|
-| Public directory | Three fictional nonprofit profiles with filters and project descriptions |
+| Public directory | Six real organizations shown as informational references without affiliation, with illustrative campaign proposals and fictional amounts; filters and project descriptions |
 | Registration and access | API-based account registration, login, logout and account retrieval |
 | Memberships | Retrieve affiliated organizations; no automatic organization access |
 | Administrative records | Permission-controlled manual donor and donation record operations in PostgreSQL |
@@ -39,6 +39,7 @@ Local test results do not establish comprehensive production deployment validati
 3. The user signs in and views their account.
 4. Without an assigned membership, the user cannot administer an organization.
 5. Some administrative operations require specific permissions, while the sample dashboard is not a shared production system.
+6. A visitor can open **Panel para fundaciones** → **Vista para inversionistas** to see a separate presentation of illustrative fundraising and impact metrics. All displayed figures in that view are fictional.
 
 ## 6. Potential business indicators — not measured project outcomes
 
